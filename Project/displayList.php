@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
-session_start();
+
+include 'index.php';
+
 // Establish a database connection
 $host = 'localhost';
 $mySQLusername = 'ty';
@@ -24,8 +26,8 @@ if (isset($_POST["save"])){
     } else {
         echo "Error: " . $conn->error;
     }
-
 }
+
 
 // Close the database connection
 $conn->close();
@@ -34,7 +36,6 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style>
@@ -71,8 +72,9 @@ $conn->close();
     <div>
         <button type="save" name="save">Save</button>
     </div>
-
 </form>
+
+
 
 
 </body>

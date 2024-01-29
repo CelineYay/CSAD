@@ -28,7 +28,6 @@ if(!empty($_SESSION["id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link href="navigationdrawer.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 <div id="drawer">
@@ -37,10 +36,8 @@ if(!empty($_SESSION["id"])) {
     <a href="#">Query Item</a>
     <a href="#" onclick="toggleSubMenu('inventorySubMenu')">Inventory Item</a>
     <div id="inventorySubMenu" class="sub-menu">
-        <a href="#">Update Inventory Items</a>
-        <a href="javascript:void(0);" onclick="loadContent('displayList.php')">Update Inventory Items</a>
+        <a href="displayList.php">Update Inventory Items</a>
         <a href="search_inventory_form.php">Search Inventory Items</a>
-        <a href="javascript:void(0);" onclick="loadContent('search_inventory_form.php')">Search Inventory Items</a>
     </div>
     <a href="#">Payment</a>
     <a href="#">Receipts</a>
@@ -67,19 +64,7 @@ if(!empty($_SESSION["id"])) {
         var subMenu = document.getElementById(subMenuId);
         subMenu.style.display = (subMenu.style.display === "none") ? "block" : "none";
     }
-    function loadContent(url) {
-        $.ajax({
-            url: url,
-            type: 'GET',
-            success: function (data) {
-                $('#main').html(data);
-                closeDrawer(); // Close the drawer after loading content
-            },
-            error: function (error) {
-                console.log('Error loading content:', error);
-            }
-        });
-    }
+
     function confirmLogout() {
         var logoutConfirmed = confirm("Are you sure you want to logout?");
         if (logoutConfirmed) {
@@ -90,7 +75,6 @@ if(!empty($_SESSION["id"])) {
         }
     }
 </script>
-
 </body>
 </html>
 
