@@ -3,7 +3,7 @@ function sendEmail() {
     let params = {
         username: document.getElementById("name").value,
         email: document.getElementById("email").value,
-        receiptImagePath: '',
+
 
     };
 
