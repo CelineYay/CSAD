@@ -21,6 +21,8 @@ if(isset($_POST["submit"])){
         if($password == $row["password"]){
             $_SESSION["login"] = TRUE;
             $_SESSION["id"] = $row["id"];
+            $_SESSION["username"] = $row["username"]; // Store username in session
+            $_SESSION["email"] = $row["email"];
             header('Location: index.php'); // Redirect to the index page
             exit();
 
