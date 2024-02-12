@@ -5,6 +5,7 @@
     <title>Receipts</title>
 </head>
 <body>
+<div class="background"></div>
 
 <?php
 session_start();
@@ -40,13 +41,30 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
 
     th, td {
         border: none;
-        padding: 8px;
+        padding: 15px;
         text-align: left;
     }
+
     .forthebottom {
         height: 300px;
         display: block;
     }
+    .background{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width:100%;
+        min-height:100vh;
+        background-image: url("background.png");
+        background-position:center ;
+        background-size: cover;
+        padding 10px 10%;
+        overflow:hidden;
+        z-index: -1;
+        opacity: 0.3;
+    *{
+        font-family: "Palatino Linotype";}
+
 
 
 
@@ -57,14 +75,14 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
         <?php foreach ($receipts as $receipt) : ?>
             <table class="receipt-table">
                 <tr>
-                    <th colspan="4">Receipt #<?php echo $receipt['receiptNumber']; ?></th>
+                    <th colspan="4"><span style="font-size: x-large;">Receipt #<?php echo $receipt['receiptNumber']; ?></span></th>
                 </tr>
 
                 <tr>
                     <th>Items</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>ItemCost</th>
+                    <th>Items Cost</th>
                 </tr>
 
                 <?php
@@ -92,8 +110,8 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
                     <td>$<?php echo $tax; ?></td>
                 </tr>
                 <tr>
-                    <td colspan="3">Final Price</td>
-                    <td>$<?php echo $final; ?></td>
+                    <td colspan="3"><span style="font-size: x-large">Amount Due</span></td>
+                    <td><span style="font-size: x-large">$<?php echo $final; ?></span></td>
                 </tr>
 
             </table>

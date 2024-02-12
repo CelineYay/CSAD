@@ -49,6 +49,7 @@
 
 </head>
 <body>
+<div class="background"></div>
 
 <?php
 
@@ -88,23 +89,53 @@ if ($get) {
 ?>
 <div style="overflow: hidden;">
     <img src="crown.png" width="150" height="150" style="float: left;">
-    <span style="text-align: right; display: block;">Invoice<br>#<?php echo"$receiptnumber"?></span>
+    <span style="text-align: right; display: block;font-size: x-large;font-family: 'Baskerville Old Face'">Invoice<br>#<?php echo"$receiptnumber"?></span>
 </div>
 
 
 <style>
     table {
-        border-collapse: collapse;
 
+        border-collapse: collapse;
+        margin-top:30px;
+        margin-bottom: 30px;
     }
 
     th, td {
-        border: 1px solid black;
         padding: 8px;
         text-align: left;
+        border: 1px solid cornflowerblue;
+        border-right: none;
+        border-left: none;
+        border-top:none;
+
+    }
+    th{
+        background: lightskyblue;
+        color: white;
+        border:none;
     }
     td.quantity {
         text-align:center;
+    }
+    .background{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width:100%;
+        min-height:100vh;
+        background-image: url("background.png");
+        background-position:center ;
+        background-size: cover;
+        padding 10px 10%;
+        overflow:hidden;
+        z-index: -1;
+        opacity: 0.3;
+
+
+    }
+    *{
+        font-family: "Palatino Linotype";
     }
 
 </style>
@@ -151,11 +182,11 @@ if ($get) {
     Dear customer,<br>
     Thank you for choosing Crown Supermarket and deals, for<br>
     any refund please show this E-receipt with the product still<br>
-    sealed within 7 days.Food items are non-refundable
+    sealed within 7 days.Food items are non-refundable.
 </p>
 <form>
     your name:<input type="text" id="name" placeholder="name" required value="<?php $currentUsername ?>"><br>
-    your email:<input type="email" id="email" placeholder="email id" required value="<?php $currentEmail ?>"><br>
+    your email:<input type="email" id="email" placeholder="email id" required value="<?php $currentEmail ?>"><br><br>
 
     <button type="submit" onclick="sendEmail(); return false;">Send an email</button>
 
