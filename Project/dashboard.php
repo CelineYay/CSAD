@@ -94,13 +94,6 @@ if ($receipt_count_result) {
             margin: 20px 0;
             color: #333;
         }
-        .sales-report {
-            margin-top: 30px;
-            background: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
         .sales-report table {
             width: 100%;
             border-collapse: collapse;
@@ -126,7 +119,12 @@ if ($receipt_count_result) {
     <div class="header">
         <h2>Dashboard</h2>
         <p>Today is Wednesday, 14 February 2024</p>
+        <p>Current Time</p>
+        <p id="current-time"></p>
+
+
     </div>
+
     <div class="box">
         <h3>Number of Clients</h3>
         <p><?php echo htmlspecialchars($num_usernames); ?></p>
@@ -139,21 +137,17 @@ if ($receipt_count_result) {
         <h3>New Invoice</h3>
         <p><?php echo htmlspecialchars($receipt_usernames); ?></p>
     </div>
-    <div class="clear"></div>
-    <div class="sales-report">
-        <h3>Daily Sales Reports</h3>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Payment Method</th>
-                <th>Price</th>
-                <th>Payment Status</th>
-            </tr>
-            <!-- Add rows here -->
-        </table>
-    </div>
+
 </div>
+<script>
+    let time = document.getElementById("current-time");
+
+    setInterval(()=>{
+        let d = new Date();
+        time.innerHTML = d.toLocaleTimeString(); //fixed time
+    },1000)
+
+</script>
 </body>
 </html>
 
