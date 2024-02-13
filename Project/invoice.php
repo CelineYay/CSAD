@@ -48,6 +48,7 @@
 
 
 </head>
+
 <body>
 <div class="background"></div>
 
@@ -58,7 +59,7 @@
 //$currentUsername = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
 //$currentEmail = ($currentUsername !== null) ? $currentUsername["email"] : null;
 
-session_start();
+//session_start();
 
 
 // Establish a database connection
