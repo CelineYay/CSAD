@@ -50,19 +50,25 @@ $conn->close();
     }
 </style>
 <body>
-<form method="POST" action="login.php">
-    <h1>Login</h1>
-    <div>
-    <label for="usernameemail">Username or Email:</label>
-    <input type="text" name="usernameemail" id="usernameemail" placeholder="Username or Email" required value="">
-    </div>
-    <div>
-    <label for="password">Password:</label>
-    <input type="text" name="password" id="password" placeholder="Password" required value="">
-    </div>
-    <button type="submit" name="submit">Login</button>
-    <p>Don't have an account? <a href="register.php">Register</a></p>
+<div class="wrapper">
+    <form method="POST" action="login.php">
+        <h1>Login</h1>
+        <div class="input-box">
+            <label for="usernameemail">Username or Email:</label>
+            <input type="text" name="usernameemail" id="usernameemail" required value="">
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <label for="password">Password:</label>
+            <input type="text" name="password" id="password" required value="">
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+            <button type="submit" name="submit">Login</button>
+        <div class="register-link">
+            <p>Don't have an account? <a href="register.php">Register</a>
+        </div>
 </form>
+</div>
 
 </body>
 </html>

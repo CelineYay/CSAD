@@ -1,3 +1,6 @@
+<?php
+include 'index.php';
+?>
 <!DOCTYPE html>
 <?php
 // Start a session
@@ -49,6 +52,7 @@ $conn->close();
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style>
     div {
@@ -56,35 +60,42 @@ $conn->close();
     }
 </style>
 <body>
+<div class="wrapper">
 <form method="POST" action="register.php">
     <h1>Register</h1>
-    <div>
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" placeholder="Username" required>
+    <div class="input-box">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <i class='bx bx-child'></i>
     </div>
-    <div>
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email" placeholder="Email" required value="">
+    <div class="input-box">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required value="">
+        <i class='bx bx-envelope'></i>
     </div>
-    <div>
-    <label for="phonenumber">Phone Number:</label>
-    <input type="text" name="phonenumber" id="phonenumber" placeholder="number" required value="">
+    <div class="input-box">
+        <label for="phonenumber">Phone Number:</label>
+        <input type="text" name="phonenumber" id="phonenumber" required value="">
+        <i class='bx bxs-phone'></i>
     </div>
-    <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" placeholder="Password" required value="">
+    <div class="input-box">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required value="">
+        <i class='bx bxs-lock-alt'></i>
     </div>
-    <div>
-    <label for="repeatpassword">Repeat Password:</label>
-    <input type="password" name="repeatpassword" id="repeatpassword" placeholder="Password" required value="">
+    <div class="input-box">
+        <label for="repeatpassword">Repeat Password:</label>
+        <input type="password" name="repeatpassword" id="repeatpassword" required value="">
+        <i class='bx bxs-lock-alt'></i>
     </div>
     <div>
     <button type="submit" name="submit">Register</button>
     </div>
-    <div>
+    <div class="login-link"v>
     <a href="login.php">Login</a>
     </div>
 </form>
+</div>
 
 
 
