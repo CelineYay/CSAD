@@ -104,7 +104,7 @@
         } else {
             // discounted price
             let discountedPrice = (price / 100) * (100 - promotion);
-            document.getElementById('itemsQueryList').innerHTML += '<tr>'+ '<td>' + name + '</td>' + '<td>' + discountedPrice + '</td>' + '</tr>';
+            document.getElementById('itemsQueryList').innerHTML += '<tr>'+ '<td>' + '<img style="width: 50px; height: 50px" src="itemImages/' + img + '">' + '</td>' + '<td>' + name + '</td>' + '<td>' + discountedPrice + '</td>' + '</tr>';
         }
     }
     function onScanError(errorMessage) {
