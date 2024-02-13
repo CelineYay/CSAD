@@ -9,47 +9,84 @@ include 'index.php'
     <meta charset="UTF-8">
     <title>Product List</title>
     <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding-top: 70px;
+        }
+
         .card-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            border: none;
+            border-radius: 10px;
             overflow: hidden;
-            width: 200px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 350px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 16px rgba(0,0,0,0.2);
         }
 
         .card img {
             width: 100%;
             height: auto;
+            border-radius: 10px 10px 0 0;
         }
 
         .card-body {
-            padding: 15px;
+            padding: 20px;
             text-align: center;
         }
 
         .card-title {
             margin: 0;
-            font-size: 18px;
+            font-size: 20px;
             color: #333;
+            font-weight: bold;
         }
 
         .card-price {
-            margin: 10px 0 0;
-            font-size: 16px;
+            margin: 15px 0 0;
+            font-size: 18px;
             color: #666;
         }
+
         .sale-label {
+            position: absolute;
+            top: 20px;
+            left: -10px;
             color: #fff;
             background-color: #d9534f;
-            padding: 5px;
-            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 0 5px 5px 0;
+            font-size: 14px;
+        }
+
+        /* Additional styling for modern look */
+        @media (max-width: 768px) {
+            .card-container {
+                justify-content: center;
+            }
+            .card {
+                width: 90%;
+            }
         }
     </style>
 </head>
