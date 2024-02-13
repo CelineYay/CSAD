@@ -50,6 +50,7 @@ include 'index.php';
 
 
 </head>
+
 <body>
 <div class="background"></div>
 
@@ -60,7 +61,7 @@ include 'index.php';
 //$currentUsername = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
 //$currentEmail = ($currentUsername !== null) ? $currentUsername["email"] : null;
 
-session_start();
+//session_start();
 
 
 // Establish a database connection
@@ -199,13 +200,10 @@ if ($get) {
     sealed within 7 days.Food items are non-refundable.
 </p>
 <form>
-<<<<<<< HEAD
-    your name:<input type="text" id="name" placeholder="name" required value=""><br>
-    your email:<input type="email" id="email" placeholder="email id" required value=""><br><br>
-=======
+
     your name:<input type="text" id="name" placeholder="name" required ><br>
     your email:<input type="email" id="email" placeholder="email id" required><br><br>
->>>>>>> 0640f9799f9a26586de9c3c13200cada691728d2
+
 
     <button type="submit" onclick="sendEmail(); return false;">Send an email</button>
 

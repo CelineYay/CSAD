@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 
-include 'index.php';
+include 'index2.php';
 
 // Establish a database connection
 $host = 'localhost';

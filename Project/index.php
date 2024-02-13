@@ -32,11 +32,12 @@ if(!empty($_SESSION["id"])) {
 <body>
 <div id="drawer">
     <a href="#" onclick="closeDrawer()">Close</a>
-    <a href="#">Home</a>
+    <a href="userhome.php">Home</a>
     <a href="query.php">Query Item</a>
     <a href="search_inventory_form.php">Inventory Item</a>
-    <a href="#">Payment</a>
+    <a href="card.php">Payment</a>
     <a href="receipts.php">Receipts</a>
+    <a href="invoice.php">Invoice</a>
     <a href="javascript:void(0);" onclick="confirmLogout()">Logout</a>
     <!-- Add more links as needed -->
 </div>

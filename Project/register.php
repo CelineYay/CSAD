@@ -1,6 +1,4 @@
-<?php
-include 'index.php';
-?>
+
 <!DOCTYPE html>
 <?php
 // Start a session
