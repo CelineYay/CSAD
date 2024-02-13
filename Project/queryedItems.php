@@ -80,15 +80,10 @@
     function qrDecoder(qrCodeMessage){
         // Split the QR code message by comma
         let qrData = qrCodeMessage.split(',');
-        console.log(qrData);
-
-        // Extract
         let name = qrData[0].trim();
         let img = qrData[1].trim();
         let price = qrData[2].trim();
         let promotion = qrData[3].trim();
-
-        console.log(name, img, price, promotion); // Check if individual components are extracted correctly
 
         // QR format item name, image src file, price, promotion
         let imgStr = 'itemImages/' + img;
@@ -105,11 +100,11 @@
         document.getElementById("nameQueried").innerHTML = name;
 
         if (promotion === "0") {
-            // If promotion is 0, no discount
+            // no discount
             document.getElementById("queryPrice").textContent = "$" + price;
             document.getElementById("queryPromo").textContent = "None";
         } else {
-            // If promotion is not 0, calculate discounted price and display promotion
+            // discounted price and display promotion
             let discountedPrice = (price / 100) * (100 - promotion);
             document.getElementById("queryPrice").textContent = "Sale! $" + discountedPrice.toFixed(2);
             document.getElementById("queryPromo").textContent = promotion + "% Off";

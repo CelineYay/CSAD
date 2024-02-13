@@ -5,7 +5,6 @@
     <title>Title</title>
     <style>
         .row{
-            /* TODO make reader centered */
             flex: 1;
             border: 2px;
         }
@@ -15,16 +14,42 @@
         #itemsContainer{
             flex: 1;
             border: 2px;
+            justify-content: center;
+            align-items: center;
+
         }
         #QRreader{
+            border: none !important;
             flex: 1;
             display: flex;
-            border: 2px;
+        }
+        #reader{
+            border: none !important;
         }
         table,td{
-            border: solid 1px pink;
+            border: none;
             margin: 5px;
             border-collapse: collapse;
+        }
+        .alert {
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: red;
         }
     </style>
 </head>
@@ -39,11 +64,14 @@
         document.getElementById("infoDiv").innerHTML = "";
     }
 </script>
-<h2 style="text-align: center">Scan item's QR code to query its infomation</h2>
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+    Please Enable camera and scan item QR code to add purchase
+</div>
 
 <div class="mainContainer">
 
-    <div id="itemsContainer" style="width: 50%; background-color: pink;">
+    <div id="itemsContainer" style="width: 50%;">
         <h5 style="text-align: center">Items Scanned</h5>
         <table>
             <thead>
@@ -56,16 +84,27 @@
         </table>
     </div>
 
-    <div id="QRreader" class="col" style="width: 50%; height: auto; background-color: cornflowerblue; text-align: center; margin: 0 auto; position: relative">
-        <div style="width:500px;" id="reader"></div>
+    <div id="QRreader" class="col" style="width: 50%; height: auto; text-align: center; margin: 0 auto; position: relative; border: none;">
+        <div id="reader"></div>
     </div>
 
 </div>
 
 <script type="text/javascript">
     function onScanSuccess(qrCodeMessage) {
-
-        //document.getElementById('itemsQueryList').innerHTML += '<tr>'+qrCodeMessage+'</tr>'
+        let qrData = qrCodeMessage.split(',');
+        let name = qrData[0].trim();
+        let img = qrData[1].trim();
+        let price = qrData[2].trim();
+        let promotion = qrData[3].trim();
+        if (promotion === "0") {
+            // no discount
+            document.getElementById('itemsQueryList').innerHTML += '<tr>'+ '<td>' + name + '</td>' + '<td>' + price + '</td>' + '</tr>';
+        } else {
+            // discounted price
+            let discountedPrice = (price / 100) * (100 - promotion);
+            document.getElementById('itemsQueryList').innerHTML += '<tr>'+ '<td>' + name + '</td>' + '<td>' + discountedPrice + '</td>' + '</tr>';
+        }
     }
     function onScanError(errorMessage) {
         //handle scan error
