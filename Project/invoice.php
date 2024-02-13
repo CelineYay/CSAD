@@ -1,6 +1,4 @@
-<?php
-include 'index.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +90,7 @@ $card = mysqli_fetch_assoc($cardresult);
 
 if ($get) {
     $row = mysqli_fetch_assoc($get);
-    $receiptnumber = $row['max_receiptnumber'] + 1;
+    $receiptnumber = $row['max_receiptnumber'];
 } else {
     // Handle the query error
     echo "Error: " . mysqli_error($conn);
@@ -170,12 +168,11 @@ if ($get) {
         echo"<td>{$item['itemname']}</td>";
         echo"<td>\${$item['price']}</td>";
         echo "<td class='quantity'>{$item['quantity']}</td>";
-        echo "<td>\$" . number_format($item['price'] * $item['quantity'], 2) . "</td>";
+        echo "<td>\$" . number_format($item['finalitemprice'], 2) . "</td>";
         echo "</tr>";
-        $finalitemcost= $item['price'] * $item['quantity'];
+
 
         $total += $item['price'] * $item['quantity'];
-        mysqli_query($conn, "UPDATE payables SET finalitemprice = $finalitemcost WHERE itemname = '{$item['itemname']}'");
 
   }
   $tax=number_format($total/100*9,2);

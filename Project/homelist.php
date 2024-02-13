@@ -1,6 +1,7 @@
 <?php
-include 'index.php';
+include 'index.php'
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,39 +9,24 @@ include 'index.php';
     <meta charset="UTF-8">
     <title>Product List</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-
         .card-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             padding: 20px;
-            justify-content: center; /* Center the cards container */
         }
 
         .card {
-            border: none;
-            border-radius: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
             overflow: hidden;
             width: 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.2s; /* Animation for hover effect */
-            background-color: #ffffff;
-        }
-
-        .card:hover {
-            transform: scale(1.05); /* Slightly increase size on hover */
-            box-shadow: 0 6px 12px rgba(0,0,0,0.25); /* Enhance shadow on hover */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .card img {
             width: 100%;
-            height: 200px; /* Set a fixed height for images */
-            object-fit: cover; /* Ensure images cover the area nicely */
+            height: auto;
         }
 
         .card-body {
@@ -49,16 +35,15 @@ include 'index.php';
         }
 
         .card-title {
-            margin: 0 0 10px 0;
-            font-size: 20px;
+            margin: 0;
+            font-size: 18px;
             color: #333;
         }
 
         .card-price {
-            margin: 0;
-            font-size: 18px;
+            margin: 10px 0 0;
+            font-size: 16px;
             color: #666;
-            font-weight: bold;
         }
         .sale-label {
             color: #fff;
@@ -95,7 +80,7 @@ include 'index.php';
             $price = htmlspecialchars($row["price"], ENT_QUOTES, 'UTF-8');
 
             echo "<div class='card'>";
-            echo "<span class=\"sale-label\">Sale!</span>";
+            echo '<span class="sale-label">Sale!</span>';
             echo "<img src='itemImages/" . $productName . ".png' alt='" . $productName . "'>";
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>" . $productName . "</h5>";

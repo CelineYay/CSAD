@@ -32,7 +32,7 @@ if(!empty($_SESSION["id"])) {
 <body>
 <div id="drawer">
     <a href="#" onclick="closeDrawer()">Close</a>
-    <a href="userhome.php">Home</a>
+    <a href="homelist.php">Home</a>
     <a href="query.php">Query Item</a>
     <a href="search_inventory_form.php">Inventory Item</a>
     <a href="card.php">Payment</a>
