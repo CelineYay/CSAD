@@ -1,6 +1,4 @@
-<?php
-include 'index.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +89,7 @@ $card = mysqli_fetch_assoc($cardresult);
 
 if ($get) {
     $row = mysqli_fetch_assoc($get);
-    $receiptnumber = $row['max_receiptnumber'] + 1;
+    $receiptnumber = $row['max_receiptnumber'];
 } else {
     // Handle the query error
     echo "Error: " . mysqli_error($conn);
@@ -199,13 +197,10 @@ if ($get) {
     sealed within 7 days.Food items are non-refundable.
 </p>
 <form>
-<<<<<<< HEAD
-    your name:<input type="text" id="name" placeholder="name" required value=""><br>
-    your email:<input type="email" id="email" placeholder="email id" required value=""><br><br>
-=======
+
     your name:<input type="text" id="name" placeholder="name" required ><br>
     your email:<input type="email" id="email" placeholder="email id" required><br><br>
->>>>>>> 0640f9799f9a26586de9c3c13200cada691728d2
+
 
     <button type="submit" onclick="sendEmail(); return false;">Send an email</button>
 
