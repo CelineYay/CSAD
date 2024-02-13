@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Queried</title>
+    <style>
+
+    </style>
+    <script src="scannerLibrary.js">
+        let count = 0;
+        // QR format item name, image src file, price, promotion
+        function qrDecoder(name, img, price, promotion){
+            // QR format item name, image src file, price, promotion
+            let imgStr = 'itemImages/'+img;
+            document.getElementById("imgDiv").innerHTML = "<img src='" + imgStr + "'>";
+            document.getElementById("infoDiv").innerHTML = "";
+        }
+
+    </script>
+</head>
+<body>
+<div id="main">
+    <div id="imgDiv">
+    </div>
+    <div id="infoDiv">
+        <table>
+            <thead id="queryName"></thead>
+            <tbody>
+                <tr id="queryPrice"></tr>
+                <tr id="queryPromo"></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

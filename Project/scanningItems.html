@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .row{
+            /* TODO make reader centered */
+            flex: 1;
+            border: 2px;
+        }
+        .mainContainer{
+            display: flex;
+        }
+        #itemsContainer{
+            flex: 1;
+            border: 2px;
+        }
+        #QRreader{
+            flex: 1;
+            display: flex;
+            border: 2px;
+        }
+        table,td{
+            border: solid 1px pink;
+            margin: 5px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<script src="scannerLibrary.js">
+    let count = 0;
+
+    function qrDecoder(name, img, price, promotion){
+        // QR format item name, image src file, price, promotion
+        let imgStr = 'itemImages/'+img;
+        document.getElementById("imgDiv").innerHTML = "<img src='" + imgStr + "'>";
+        document.getElementById("infoDiv").innerHTML = "";
+    }
+</script>
+<h2 style="text-align: center">Scan item's QR code to query its infomation</h2>
+
+<div class="mainContainer">
+
+    <div id="itemsContainer" style="width: 50%; background-color: pink;">
+        <h5 style="text-align: center">Items Scanned</h5>
+        <table>
+            <thead>
+            <td style="width: 80%">Item</td>
+            <td style="width: 20%">Price / $</td>
+            </thead>
+            <tbody id="itemsQueryList">
+            <!--items scanned listed here-->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="QRreader" class="col" style="width: 50%; height: auto; background-color: cornflowerblue; text-align: center; margin: 0 auto; position: relative">
+        <div style="width:500px;" id="reader"></div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function onScanSuccess(qrCodeMessage) {
+
+        //document.getElementById('itemsQueryList').innerHTML += '<tr>'+qrCodeMessage+'</tr>'
+    }
+    function onScanError(errorMessage) {
+        //handle scan error
+    }
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess, onScanError);
+</script>
+</body>
+</html>
