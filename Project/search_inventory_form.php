@@ -59,6 +59,7 @@ if ($searchTerm) {
     <input type="text" name="search" id="search" value="<?php echo htmlspecialchars($searchTerm); ?>">
     <button type="submit">Search</button>
 </form>
+<br>
 <!-- Display product records -->
 <div class="outer-wrapper">
     <div class="table-wrapper">

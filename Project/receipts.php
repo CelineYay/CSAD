@@ -60,7 +60,7 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
         left: 0;
         width:100%;
         min-height:100vh;
-        background-image: url("background.png");
+        /*background-image: url("background.png");*/
         background-position:center ;
         background-size: cover;
         padding 10px 10%;

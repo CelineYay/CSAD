@@ -26,7 +26,7 @@
                         <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'about.php'){echo 'active';} ?>" href="about.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="#">Team Member</a>
+                        <a class= "nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'teammember.php'){echo 'active';} ?>" href="teammember.php">Team Member</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'calendar.php'){echo 'active';} ?>" href="calendar.php">Calendar</a>
