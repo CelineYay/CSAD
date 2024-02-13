@@ -34,6 +34,28 @@ if(isset($_POST["submit"])){
         echo "<script>alert('User Not Registered');</script>";
     }
 }
+if(isset($_POST["submit1"])){
+    $usernameemail = $_POST["usernameemail"]; //from the id
+    $password = $_POST["password"];
+    $result = mysqli_query($conn, "SELECT * FROM staffs WHERE username='$usernameemail' OR email='$usernameemail' ");
+    $row = mysqli_fetch_assoc($result);
+    if(mysqli_num_rows($result)>0){
+        if($password == $row["password"]){
+            $_SESSION["login"] = TRUE;
+            $_SESSION["id"] = $row["id"];
+            $_SESSION["username"] = $row["username"]; // Store username in session
+            $_SESSION["email"] = $row["email"];
+            header('Location: dashboard.php'); // Redirect to the index page
+            exit();
+
+        }else{
+            echo "<script>alert('Wrong Password');</script>";
+        }
+
+    }else{
+        echo "<script>alert('User Not Registered');</script>";
+    }
+}
 // Close the database connection
 $conn->close();
 ?>
@@ -63,7 +85,8 @@ $conn->close();
             <input type="text" name="password" id="password" required value="">
             <i class='bx bxs-lock-alt'></i>
         </div>
-            <button type="submit" name="submit">Login</button>
+            <button type="submit" name="submit">Customer</button>
+            <button type="submit" name="submit1">Staff</button>
         <div class="register-link">
             <p>Don't have an account? <a href="register.php">Register</a>
         </div>

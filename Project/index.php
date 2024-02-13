@@ -33,12 +33,8 @@ if(!empty($_SESSION["id"])) {
 <div id="drawer">
     <a href="#" onclick="closeDrawer()">Close</a>
     <a href="#">Home</a>
-    <a href="#">Query Item</a>
-    <a href="#" onclick="toggleSubMenu('inventorySubMenu')">Inventory Item</a>
-    <div id="inventorySubMenu" class="sub-menu">
-        <a href="displayList.php">Update Inventory Items</a>
-        <a href="search_inventory_form.php">Search Inventory Items</a>
-    </div>
+    <a href="query.php">Query Item</a>
+    <a href="search_inventory_form.php">Inventory Item</a>
     <a href="#">Payment</a>
     <a href="receipts.php">Receipts</a>
     <a href="javascript:void(0);" onclick="confirmLogout()">Logout</a>

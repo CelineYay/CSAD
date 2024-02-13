@@ -10,6 +10,29 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/Project/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/Project/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/Project/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/Project/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/Project/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/Project/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/Project/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/Project/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/Project/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/Project/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Project/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/Project/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/Project/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/Project/vendor/composer" />
+      <path value="$PROJECT_DIR$/Project/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/Project/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/Project/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/Project/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/Project/vendor/paragonie/constant_time_encoding" />
+    </include_path>
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
