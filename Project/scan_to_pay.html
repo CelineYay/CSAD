@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="card.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <p> Payment methods</p>
+            <hr style="border:1px solid #ccc; margin: 0 15px;">
+            <div class="methods">
+                <div onclick="showCardPayment()" id="tColorA" style="color: greenyellow;"><i
+                        class="fa-solid fa-credit-card" style="color: greenyellow;"></i> Payment by Card</div>
+                <div onclick="showInternetBanking()" id="tColorB"><i class=" fa-solid fa-building-columns"></i> Internet
+                    Banks</div>
+                <div onclick="showRedeemPoints()" id="tColorC"><i class=" fa-solid fa-wallet"></i> Redeem Points</div>
+            </div>
+            <hr style="border: 1px solid #ccc; margin: 0 15px;">
+        </div>
+        <div class="center">
+            <a href="https://www.shift4shop.com/
+            credit-card-logos.html"><img alt="Credit Card Logos" title="Credit Card Logos"
+                    src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" width="250"
+                    height="auto" /></a>
+            <hr style="border:1px solid #ccc; margin: 0 15px;">
+
+            <div class="card-details" id="card-form">
+                <form>
+                   <!-- Internet Banking section -->
+    <div id="internet-banking" style="display: none;">
+        <div id="qrCodeContainer">
+            <img id="qr-code-image" src="paynowQRcode.png" alt="QR Code for payment" style="max-width:100%;">
+            <p class="text-center">SCAN TO PAY</p>
+            <p class="text-center">PayNow is supported by these participating Banks</p>
+            <p class="text-center">Bank of China, Citibank, DBS/POSB, HSBC Bank, Industrial and Commercial Bank
+                of China Limited, Maybank, OCBC Bank, Standard Chartered Bank & United Overseas Bank Limited</p>
+        </div>
+    </div>
+                    <button> PAY NOW </button>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <p> Order Information</p>
+            <hr style="border: 1px solid #ccc; margin: 0 15px;">
+            <div class="details">
+                <div style="font-weight: bold; padding: 3px 0;">
+                    Order details </div>
+                <div style="padding: 3px 0;"> Pokka Green Tea: $1.40 </div>
+            </div>
+            <hr style="border:1px solid #ccc; margin: 0 15px;">
+            <a href="https://www.shift4shop.com/
+            credit-card-logos.html"><img alt="Credit Card Logos" title="Credit Card Logos"
+                    src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" width="100%"
+                    height="auto" /></a>
+        </div>
+    </div>
+
+    <!-- Internet Banking section -->
+    <div id="internet-banking" style="display: none;">
+        <div id="qrCodeContainer">
+            <img id="qr-code-image" src="paynowQRcode.png" alt="QR Code for payment" style="max-width:100%;">
+            <p class="text-center">SCAN TO PAY</p>
+            <p class="text-center">PayNow is supported by these participating Banks</p>
+            <p class="text-center">Bank of China, Citibank, DBS/POSB, HSBC Bank, Industrial and Commercial Bank
+                of China Limited, Maybank, OCBC Bank, Standard Chartered Bank & United Overseas Bank Limited</p>
+        </div>
+    </div>
+    <script src="card.js"></script>
+
+    <script>
+        // Ensure the initial state is set
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select elements
+            let tColorA = document.getElementById('tColorA'),
+                tColorB = document.getElementById('tColorB'),
+                tColorC = document.getElementById('tColorC'),
+                iconA = document.querySelector('.fa-credit-card'),
+                iconB = document.querySelector('.fa-building-columns'),
+                iconC = document.querySelector('.fa-wallet'),
+                cDetails = document.querySelector('.card-details'),
+                qrCodeContainer = document.getElementById('qrCodeContainer');
+
+            // Set initial state
+            tColorA.style.color = "greenyellow";
+            iconA.style.color = "greenyellow";
+            cDetails.style.display = "block";
+            qrCodeContainer.style.display = "none";
+
+
+
+
+            // Event listeners
+            tColorA.addEventListener("click", function () { doFun(); });
+            tColorB.addEventListener("click", function () { doFunA(); });
+            tColorC.addEventListener("click", function () { doFunB(); });
+        });
+    
+    
+    </script>
+
+</body>
+
+</html>
