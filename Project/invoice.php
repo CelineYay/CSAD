@@ -100,7 +100,7 @@ if ($get) {
 
 <div style="overflow: hidden;">
     <img src="crown.png" width="150" height="150" style="float: left;">
-    <span style="text-align: right; display: block;font-size: x-large;font-family: 'Baskerville Old Face'">Invoice<br>#<?php echo"$receiptnumber"?></span>
+    <span style="position: absolute; left: 1300px; top: 20px ; display: block;font-size: xx-large;font-family: 'Baskerville Old Face'">Invoice<br>#<?php echo"$receiptnumber"?></span>
 </div>
 
 
@@ -184,9 +184,9 @@ if ($get) {
 
 </table>
 <div id="summary">
-    Visa:<?php echo $card['visa']; ?><span style="float: right; display: inline-block;">Subtotal: $<?php echo number_format($total, 2);?></span><br>
-    Card:<?php echo $card['card number']; ?><span style="float: right; display: inline-block;">Tax(9%): <?php echo"$$tax"?></span><br>
-    <span style="float: right; display: inline-block;">Total: <?php echo"$$final"?></span><br>
+    Visa:<?php echo $card['visa']; ?><span style="position: absolute; left: 1300px; top: 330px; display: inline-block;">Subtotal: $<?php echo number_format($total, 2);?></span><br>
+    Card:<?php echo $card['card number']; ?><span style="position: absolute; left: 1300px; top:354px; display: inline-block;">Tax(9%): <?php echo"$$tax"?></span><br>
+    <span style="position: absolute; left: 1300px; top: 378px; display: inline-block;">Total: <?php echo"$$final"?></span><br>
 </div>
 <p>
 <p>
