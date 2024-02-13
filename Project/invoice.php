@@ -54,8 +54,7 @@
 <?php
 
 session_start();
-$currentUsername = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
-$currentEmail = ($currentUsername !== null) ? $currentUsername["email"] : null;
+
 // Establish a database connection
 $host = 'localhost';
 $mySQLusername = 'ty';
@@ -75,6 +74,12 @@ $items = mysqli_fetch_all($all, MYSQLI_ASSOC);
 
 $query = "SELECT MAX(receiptNumber) AS max_receiptnumber FROM receipt";
 $get = mysqli_query($conn, $query);
+
+
+$query2="SELECT * FROM users WHERE username='joshua'";
+$cardresult=mysqli_query($conn,$query2);
+$card = mysqli_fetch_assoc($cardresult);
+
 
 if ($get) {
     $row = mysqli_fetch_assoc($get);
@@ -133,6 +138,7 @@ if ($get) {
         opacity: 0.3;
 
 
+
     }
     *{
         font-family: "Palatino Linotype";
@@ -173,9 +179,9 @@ if ($get) {
 
 </table>
 <div id="summary">
-    Visa:<span style="float: right; display: inline-block;">Subtotal: $<?php echo number_format($total, 2);?></span><br>
-    Card:<span style="float: right; display: inline-block;">Tax(9%): <?php echo"$$tax"?></span><br>
-    Read:<span style="float: right; display: inline-block;">Total: <?php echo"$$final"?></span><br>
+    Visa:<?php echo $card['visa']; ?><span style="float: right; display: inline-block;">Subtotal: $<?php echo number_format($total, 2);?></span><br>
+    Card:<?php echo $card['card number']; ?><span style="float: right; display: inline-block;">Tax(9%): <?php echo"$$tax"?></span><br>
+    <span style="float: right; display: inline-block;">Total: <?php echo"$$final"?></span><br>
 </div>
 <p>
 <p>
@@ -185,8 +191,8 @@ if ($get) {
     sealed within 7 days.Food items are non-refundable.
 </p>
 <form>
-    your name:<input type="text" id="name" placeholder="name" required value="<?php $currentUsername ?>"><br>
-    your email:<input type="email" id="email" placeholder="email id" required value="<?php $currentEmail ?>"><br><br>
+    your name:<input type="text" id="name" placeholder="name" required ><br>
+    your email:<input type="email" id="email" placeholder="email id" required><br><br>
 
     <button type="submit" onclick="sendEmail(); return false;">Send an email</button>
 
