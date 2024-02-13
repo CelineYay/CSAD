@@ -114,8 +114,8 @@
             document.getElementById("queryPrice").textContent = "Sale! $" + discountedPrice.toFixed(2);
             document.getElementById("queryPromo").textContent = promotion + "% Off";
             let queryPromo = document.getElementById("queryPromoRow");
-            queryPromo.style.color = "red";
-            queryPromo.style.backgroundColor = "#BBD1E5";
+            queryPromo.style.color = "white";
+            queryPromo.style.backgroundColor = "green";
             queryPromo.style.borderRadius = "5px";
             queryPromo.style.fontWeight = "bold";
         }
