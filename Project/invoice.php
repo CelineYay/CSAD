@@ -167,12 +167,11 @@ if ($get) {
         echo"<td>{$item['itemname']}</td>";
         echo"<td>\${$item['price']}</td>";
         echo "<td class='quantity'>{$item['quantity']}</td>";
-        echo "<td>\$" . number_format($item['price'] * $item['quantity'], 2) . "</td>";
+        echo "<td>\$" . number_format($item['finalitemprice'], 2) . "</td>";
         echo "</tr>";
-        $finalitemcost= $item['price'] * $item['quantity'];
+
 
         $total += $item['price'] * $item['quantity'];
-        mysqli_query($conn, "UPDATE payables SET finalitemprice = $finalitemcost WHERE itemname = '{$item['itemname']}'");
 
   }
   $tax=number_format($total/100*9,2);
