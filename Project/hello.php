@@ -20,19 +20,19 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" href="home.php">Home</a>
+                        <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'home.php'){echo 'active';} ?>" href="home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="about.php">About</a>
+                        <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'about.php'){echo 'active';} ?>" href="about.php">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-lg-2" href="#">Team Member</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="calendar.php">Calendar</a>
+                        <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'calendar.php'){echo 'active';} ?>" href="calendar.php">Calendar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="event.php">Event</a>
+                        <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'event.php'){echo 'active';} ?>" href="event.php">Event</a>
                     </li>
                 </ul>
             </div>

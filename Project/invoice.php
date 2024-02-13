@@ -55,14 +55,14 @@ include 'index.php';
 
 <?php
 
-<<<<<<< HEAD
+
 
 //$currentUsername = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
 //$currentEmail = ($currentUsername !== null) ? $currentUsername["email"] : null;
-=======
+
 session_start();
 
->>>>>>> 0640f9799f9a26586de9c3c13200cada691728d2
+
 // Establish a database connection
 $host = 'localhost';
 $mySQLusername = 'ty';

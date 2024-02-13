@@ -49,7 +49,7 @@ if ($conn->connect_error) {
 
     body {
         font-family: 'Roboto', sans-serif;
-        background-color: #f8f9fa;
+        background-color: #f8f8f8;
         color: var(--font-color);
         margin: 0;
         padding: 20px;
