@@ -1,3 +1,6 @@
+<?php
+include 'index.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
 <div class="background"></div>
 
 <?php
-session_start();
+
 // Establish a database connection
 $host = 'localhost';
 $mySQLusername = 'ty';
@@ -30,6 +33,8 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
 <style>
     .receipt-container {
         white-space: nowrap;
+        margin-top: 50px; /* Adjust the value as needed */
+
     }
 
     .receipt-table {

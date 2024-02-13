@@ -1,4 +1,6 @@
-
+<?php
+include 'index.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,9 +55,9 @@
 
 <?php
 
-session_start();
-$currentUsername = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
-$currentEmail = ($currentUsername !== null) ? $currentUsername["email"] : null;
+
+//$currentUsername = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
+//$currentEmail = ($currentUsername !== null) ? $currentUsername["email"] : null;
 // Establish a database connection
 $host = 'localhost';
 $mySQLusername = 'ty';
@@ -185,8 +187,8 @@ if ($get) {
     sealed within 7 days.Food items are non-refundable.
 </p>
 <form>
-    your name:<input type="text" id="name" placeholder="name" required value="<?php $currentUsername ?>"><br>
-    your email:<input type="email" id="email" placeholder="email id" required value="<?php $currentEmail ?>"><br><br>
+    your name:<input type="text" id="name" placeholder="name" required value=""><br>
+    your email:<input type="email" id="email" placeholder="email id" required value=""><br><br>
 
     <button type="submit" onclick="sendEmail(); return false;">Send an email</button>
 

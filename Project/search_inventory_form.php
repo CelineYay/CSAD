@@ -37,7 +37,13 @@ $conn->close();
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="./filter.js"></script>
+    <link rel="stylesheet" href="search.css">
 </head>
+<style>
+    body {
+        margin-top: 50px; /* Adjust this value as needed */
+    }
+</style>
 <body>
 <form action="#" method="post">
     <label for="search">Search:</label>

@@ -40,14 +40,16 @@ if(!empty($_SESSION["id"])) {
         <a href="search_inventory_form.php">Search Inventory Items</a>
     </div>
     <a href="#">Payment</a>
-    <a href="#">Receipts</a>
+    <a href="receipts.php">Receipts</a>
     <a href="javascript:void(0);" onclick="confirmLogout()">Logout</a>
     <!-- Add more links as needed -->
 </div>
 
 <div id="main">
+    <div class="top-nav">
     <span style="font-size:30px;cursor:pointer" onclick="openDrawer()">☰</span>
     <h1>Welcome <?php echo $row["username"]?></h1>
+    </div>
 </div>
 
 <script>

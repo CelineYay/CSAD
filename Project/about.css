@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    min-height: 100vh; /* Minimum height of viewport */
+    padding-top: 100px; /* Adjust based on navbar height to prevent overlap */
+}
+.project-introduction {
+    background-color: #ffffff;
+    margin: 20px auto;
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.project-introduction h1 {
+    color: #333;
+}
+
+.project-introduction p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
