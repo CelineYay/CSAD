@@ -75,7 +75,8 @@
         <h5 style="text-align: center">Items Scanned</h5>
         <table>
             <thead>
-            <td style="width: 80%">Item</td>
+            <td style="width: 30%"></td>
+            <td style="width: 50%">Item</td>
             <td style="width: 20%">Price / $</td>
             </thead>
             <tbody id="itemsQueryList">
@@ -99,7 +100,7 @@
         let promotion = qrData[3].trim();
         if (promotion === "0") {
             // no discount
-            document.getElementById('itemsQueryList').innerHTML += '<tr>'+ '<td>' + name + '</td>' + '<td>' + price + '</td>' + '</tr>';
+            document.getElementById('itemsQueryList').innerHTML += '<tr>' + '<td>' + '<img style="width: 50px; height: 50px" src="itemImages/' + img + '">' + '</td>' + '<td>' + name + '</td>' + '<td>' + price + '</td>' + '</tr>';
         } else {
             // discounted price
             let discountedPrice = (price / 100) * (100 - promotion);
