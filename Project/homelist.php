@@ -116,14 +116,36 @@ include 'index.php'
             $productName = htmlspecialchars($row["productname"], ENT_QUOTES, 'UTF-8');
             $price = htmlspecialchars($row["price"], ENT_QUOTES, 'UTF-8');
 
-            echo "<div class='card'>";
-            echo '<span class="sale-label">Sale!</span>';
-            echo "<img src='itemImages/" . $productName . ".png' alt='" . $productName . "'>";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>" . $productName . "</h5>";
-            echo "<p class='card-price'>$" . $price . "</p>";
-            echo "</div>";
-            echo "</div>";
+            if ($productName == "Basmati Rice"){
+                echo "<div class='card'>";
+                echo '<span class="sale-label">Sale!</span>';
+                echo "<img src='itemImages/" . $productName . ".png' alt='" . "BasmatiRice" . "'>";
+                echo "<div class='card-body'>";
+                echo "<h5 class='card-title'>" . $productName . "</h5>";
+                echo "<p class='card-price'>$" . $price . "</p>";
+                echo "</div>";
+                echo "</div>";
+
+            } elseif ($productName == "Jasmine Rice"){
+                echo "<div class='card'>";
+                echo '<span class="sale-label">Sale!</span>';
+                echo "<img src='itemImages/" . $productName . ".png' alt='" . "JasmineRice" . "'>";
+                echo "<div class='card-body'>";
+                echo "<h5 class='card-title'>" . $productName . "</h5>";
+                echo "<p class='card-price'>$" . $price . "</p>";
+                echo "</div>";
+                echo "</div>";
+            } else{
+                echo "<div class='card'>";
+                echo '<span class="sale-label">Sale!</span>';
+                echo "<img src='itemImages/" . $productName . ".png' alt='" . $productName . "'>";
+                echo "<div class='card-body'>";
+                echo "<h5 class='card-title'>" . $productName . "</h5>";
+                echo "<p class='card-price'>$" . $price . "</p>";
+                echo "</div>";
+                echo "</div>";
+            }
+
         }
     } else {
         echo "<p>No products found.</p>";

@@ -17,7 +17,7 @@ include'index.php'
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
         <style>
-        #qrCodeContainer {
+        #paypal-button-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,11 +25,11 @@ include'index.php'
             text-align: center;
         }
         .payment_text {
-            font-size: 24px;
-            margin-top: 10px;
+            font-size: 20px;
+            margin-top: 5px;
         }
         .bank_support_text {
-            font-size: 16px;
+            font-size: 15px;
             margin-top: 10px;
         }
 
@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
             echo"<tr>";
             echo"<td>{$item['itemname']}</td>";
             echo"<td>\${$item['price']}</td>";
-            echo"<td>\${$item['quantity']}</td>";
+            echo"<td>{$item['quantity']}</td>";
             echo"<td>\${$item['finalitemprice']}</td>";
             echo "</tr>";
 
@@ -324,10 +324,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             $tax=number_format($total/100*9,2);
             $final=$total+$tax;
-            $points=$total*100;
+            $points=$final*100;
             echo"</table>";
             echo"Tax:$$tax<br>";
-            echo"Total:$$total<br>";
+            echo"Total:$$final<br>";
             echo"Points earned:$points points";
 
 

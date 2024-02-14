@@ -1,3 +1,7 @@
+<?php
+include'index.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,27 +58,6 @@
 </head>
 <body>
 
-<?php
-
-// Establish a database connection
-$host = 'localhost';
-$mySQLusername = 'ty';
-$mySQLpassword = '123';
-$database = 'csaduersdatabase';
-
-$conn = new mysqli($host, $mySQLusername, $mySQLpassword, $database);
-if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
-}
-
-$all = mysqli_query($conn, "SELECT * FROM payables");
-$items = mysqli_fetch_all($all, MYSQLI_ASSOC);
-
-$allreceipt = mysqli_query($conn, "SELECT * FROM receipt");
-$receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
-
-
-?>
 
 <script src="scannerLibrary.js">
     let count = 0;
@@ -124,7 +107,7 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
     let tt = 0; // Initialize total price variable
 
     function purchasing(){
-
+        window.location.href = 'card.php'
     }
 
 
@@ -142,7 +125,6 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
                 '<td>' + price.toFixed(2) + '</td>' +
                 '</tr>';
             tt += price;
-            mysqli_query($conn, "INSERT INTO payables(itemname,price,quantity) VALUES ($name,$price, 1)");
         } else {
             let discountedPrice = promotion === 0 ? price : (price / 100) * (100 - promotion);
             document.getElementById('itemsQueryList').innerHTML += '<tr>' +
@@ -151,18 +133,19 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
                 '<td>' + discountedPrice.toFixed(2) + '</td>' +
                 '</tr>';
             tt += discountedPrice;
-            mysqli_query($conn, "INSERT INTO payables(itemname,price,quantity,finalitemprice) VALUES ($name,$price, 1, $discountedPrice)");
         }
 
         document.getElementById('tt').textContent = '$' + tt.toFixed(2);
 
         setTimeout(function() {
             // Wait 3 seconds to prevent multiple scanning
+            document.getElementById('itemsQueryList').innerHTML = '';
         }, 3000);
     }
 
     function onScanError(errorMessage) {
         // Handle scan error
+
     }
 
     var html5QrcodeScanner = new Html5QrcodeScanner(

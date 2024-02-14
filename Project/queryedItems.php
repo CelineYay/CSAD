@@ -44,7 +44,7 @@
 </head>
 <body>
 <div class="alert">
-    <span class="closebtn" onclick="window.location.href = 'query.html';">&times;</span>
+    <span class="closebtn" onclick="window.location.href = 'query.PHP';">&times;</span>
     scanned item named <B id="nameQueried">Item name</B>
 </div>
 <div id="main">

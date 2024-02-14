@@ -36,7 +36,7 @@ $card = mysqli_fetch_assoc($cardresult);
 
 if ($get) {
     $row = mysqli_fetch_assoc($get);
-    $receiptnumber = $row['max_receiptnumber'];
+    $receiptnumber = $row['max_receiptnumber']+1;
 } else {
     // Handle the query error
     echo "Error: " . mysqli_error($conn);

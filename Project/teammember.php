@@ -38,12 +38,14 @@ include'hello.php';
         <td>Team Leader</td>
         <td>displayList.php
             search_inventory_form.php
-            navigationdrawer(index.php)
+            navigationdrawer
             dashboard.php
             calendar.php
             login.php
-            register.php</td>
+            register.php
+            </td>
         <td>BootStrap
+            https://developer.paypal.com/dashboard/
             Youtube</td>
     </tr>
     <tr>
@@ -64,7 +66,7 @@ include'hello.php';
         <td>card.php
             cardsave.php
             confirmation.html</td>
-        <td></td>
+        <td>Bootstrap</td>
     </tr>
     <tr>
         <th scope="row">3</th>

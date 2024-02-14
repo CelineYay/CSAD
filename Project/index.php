@@ -35,7 +35,7 @@ if(!empty($_SESSION["id"])) {
     <a href="homelist.php">Home</a>
     <a href="query.php">Query Item</a>
     <a href="search_inventory_form.php">Inventory Item</a>
-    <a href="card.php">Payment</a>
+    <a href="scanningItems.php">Payment</a>
     <a href="receipts.php">Receipts</a>
     <a href="invoice.php">Invoice</a>
     <a href="javascript:void(0);" onclick="confirmLogout()">Logout</a>
