@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         return actions.order.create({
                             purchase_units: [{
                                 amount:{
-                                    value:'8.20'
+                                    value:'21.8'
                                 }
                             }]
                         });

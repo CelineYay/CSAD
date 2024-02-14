@@ -11,6 +11,21 @@ let tColorA = document.getElementById('tColorA'),
     points = document.getElementById('redeem-points');
 
 // Function to show the PayNow interface
+
+function showCardPayment() {
+    // Update tab colors
+    tColorA.style.color = "greenyellow";
+    tColorB.style.color = "#444";
+    tColorC.style.color = "#444";
+    iconA.style.color = "greenyellow";
+    iconB.style.color = "#aaa";
+    iconC.style.color = "#aaa";
+
+    // Hide card payment form and show PayNow interface
+    cDetails.style.display = "block"; // Hide card details form
+    qrCodeContainer.style.display = "none"; // Show PayNow interface
+    points.style.display = "none";
+}
 function showInternetBanking() {
     // Update tab colors
     tColorA.style.color = "#444";

@@ -139,7 +139,7 @@ include'index.php';
 
         setTimeout(function() {
             // Wait 3 seconds to prevent multiple scanning
-            document.getElementById('itemsQueryList').innerHTML = '';
+            document.getElementById('itemsQueryList').innerHTML += '';
         }, 3000);
     }
 

@@ -1,55 +1,13 @@
 <?php
-
-include'index.php';
-
-//$currentUsername = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
-//$currentEmail = ($currentUsername !== null) ? $currentUsername["email"] : null;
-
-//session_start();
-
-
-// Establish a database connection
-$host = 'localhost';
-$mySQLusername = 'ty';
-$mySQLpassword = '123';
-$database = 'csaduersdatabase';
-
-$conn = new mysqli($host, $mySQLusername, $mySQLpassword, $database);
-if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
-}
-$all = mysqli_query($conn, "SELECT * FROM payables");
-
-// Fetch all rows from the result set and store them in an array
-$items = mysqli_fetch_all($all, MYSQLI_ASSOC);
-
-
-
-$query = "SELECT MAX(receiptNumber) AS max_receiptnumber FROM receipt";
-$get = mysqli_query($conn, $query);
-
-
-$query2="SELECT * FROM users WHERE username='joshua'";
-$cardresult=mysqli_query($conn,$query2);
-$card = mysqli_fetch_assoc($cardresult);
-
-
-if ($get) {
-    $row = mysqli_fetch_assoc($get);
-    $receiptnumber = $row['max_receiptnumber']+1;
-} else {
-    // Handle the query error
-    echo "Error: " . mysqli_error($conn);
-}
-
-
-
+include'index.php'
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Invoice</title>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         function sendEmail() {
@@ -98,7 +56,54 @@ if ($get) {
 <body>
 <div class="background"></div>
 
-<div style="overflow: hidden;">
+<?php
+
+
+
+//$currentUsername = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
+//$currentEmail = ($currentUsername !== null) ? $currentUsername["email"] : null;
+
+//session_start();
+
+
+// Establish a database connection
+$host = 'localhost';
+$mySQLusername = 'ty';
+$mySQLpassword = '123';
+$database = 'csaduersdatabase';
+
+$conn = new mysqli($host, $mySQLusername, $mySQLpassword, $database);
+if ($conn->connect_error) {
+    die('Connection failed: ' . $conn->connect_error);
+}
+$all = mysqli_query($conn, "SELECT * FROM payables");
+
+// Fetch all rows from the result set and store them in an array
+$items = mysqli_fetch_all($all, MYSQLI_ASSOC);
+
+
+
+$query = "SELECT MAX(receiptNumber) AS max_receiptnumber FROM receipt";
+$get = mysqli_query($conn, $query);
+
+
+$query2="SELECT * FROM users WHERE username='joshua'";
+$cardresult=mysqli_query($conn,$query2);
+$card = mysqli_fetch_assoc($cardresult);
+
+
+if ($get) {
+    $row = mysqli_fetch_assoc($get);
+    $receiptnumber = $row['max_receiptnumber'] + 1;
+} else {
+    // Handle the query error
+    echo "Error: " . mysqli_error($conn);
+}
+
+
+
+?>
+<div style="overflow: hidden; display: flex; justify-content: center; align-items: center;">
     <img src="crown.png" width="150" height="150" style="float: left;">
     <span style="position: absolute; left: 1300px; top: 20px ; display: block;font-size: xx-large;font-family: 'Baskerville Old Face'">Invoice<br>#<?php echo"$receiptnumber"?></span>
 </div>
@@ -110,6 +115,7 @@ if ($get) {
         border-collapse: collapse;
         margin-top:30px;
         margin-bottom: 30px;
+        width:100%;
     }
 
     th, td {
@@ -125,9 +131,6 @@ if ($get) {
         background: lightskyblue;
         color: white;
         border:none;
-    }
-    td.quantity {
-        text-align:center;
     }
     .background{
         position: fixed;
@@ -153,14 +156,14 @@ if ($get) {
 </style>
 <table id="table">
 
-  <tr>
-    <th>Items</th>
-    <th>Price</th>
-    <th>Quantity</th>
-    <th>Total</th>
-  <tr>
-  </tr>
-  <?php
+    <tr>
+        <th>Items</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+    <tr>
+    </tr>
+    <?php
     $total=0;
     foreach($items as $item){
         echo"<tr>";
@@ -173,13 +176,13 @@ if ($get) {
 
         $total += $item['price'] * $item['quantity'];
 
-  }
-  $tax=number_format($total/100*9,2);
-  $final=$total+$tax;
-  mysqli_query($conn, "INSERT INTO receipt (receiptNumber,cost, tax, finalPrice) VALUES ($receiptnumber,$total, $tax, $final)");
+    }
+    $tax=number_format($total/100*9,2);
+    $final=$total+$tax;
+    mysqli_query($conn, "INSERT INTO receipt (receiptNumber, cost, tax, finalPrice) VALUES ($receiptnumber, $total, $tax, $final)");
 
 
-  ?>
+    ?>
 
 
 </table>
