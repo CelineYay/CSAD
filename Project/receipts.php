@@ -31,45 +31,70 @@ $receipts = mysqli_fetch_all($allreceipt, MYSQLI_ASSOC);
 ?>
 
 <style>
-    .receipt-container {
-        white-space: nowrap;
-        margin-top: 50px; /* Adjust the value as needed */
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
 
+    .receipt-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Distance between each receipt */
+        padding: 20px;
     }
 
     .receipt-table {
-        border-collapse: collapse;
-        border: 2px solid black;
-        display: inline-block;
-        margin-right: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin-bottom: 20px;
     }
 
     th, td {
-        border: none;
-        padding: 15px;
+        padding: 12px 15px;
         text-align: left;
     }
 
-    .forthebottom {
-        height: 300px;
-        display: block;
+    th {
+        background-color: #007bff;
+        color: #fff;
     }
-    .background{
+
+    .receipt-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 15px;
+        font-size: 20px;
+        border-bottom: 2px solid #006fe6;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .totals-row {
+        font-weight: bold;
+    }
+
+    .amount-due {
+        font-size: 1.2em;
+    }
+
+    .background {
         position: fixed;
         top: 0;
         left: 0;
-        width:100%;
-        min-height:100vh;
-        /*background-image: url("background.png");*/
-        background-position:center ;
-        background-size: cover;
-        padding 10px 10%;
-        overflow:hidden;
+        width: 100%;
+        height: 100%;
+        background-color: #e9ecef;
         z-index: -1;
-        opacity: 0.3;
-    *{
-        font-family: "Palatino Linotype";}
-
+        opacity: 0.5;
+    }
 
 
 

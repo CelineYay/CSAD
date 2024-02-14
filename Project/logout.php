@@ -4,7 +4,7 @@ require 'database.php';
 $_session=[];
 session_unset();
 session_destroy();
-header('Location: hello.php');
+header('Location: home.php');
 exit();
 ?>
 <!DOCTYPE html>

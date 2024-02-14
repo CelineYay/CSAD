@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             <!-- Internet Banks Section -->
             <div id="internet-banking" style="display: none;">
-        <div class ="payment_select" id="qrCodeContainer">
+        <div class ="payment_select" id="paypal-button-container">
         <form action="confirmation.html" method="post">
             <img class="qr_code_image" id="qr-code-image" src="paynowQRcode.png" alt="QR Code for payment" style="max-width:300px;">
             <h1 class="payment_text">SCAN TO PAY</h1>
@@ -191,7 +191,22 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class="bank_support_text">Bank of China, Citibank, DBS/POSB, HSBC Bank, Industrial and Commercial Bank
                 of China Limited, Maybank, OCBC Bank, Standard Chartered Bank & United Overseas Bank Limited</p>
                 <input type="submit" value="PAYNOW" class="background" id="pay-now-btn">
-</form>
+            <script src="https://www.paypal.com/sdk/js?client-id=Ad1U25gbgNk88RkuucgxxtZxNO0TAPRsW5xfI8TAmZsyDy7u3PrCiVydlab7_fXDVqXaCzGzsySZet_8"></script>
+            <script>
+                paypal.Buttons({
+                    createOrder: function(data, actions){
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount:{
+                                    value:'8.20'
+                                }
+                            }]
+                        });
+                    }
+                }).render('#paypal-button-container')
+            </script>
+
+        </form>
         </div>
     </div>
             <!-- Card Payment Section -->

@@ -15,6 +15,10 @@ include'hello.php';
         margin-top: 150px;
         background-color: #f8f8f8;
     }
+    table{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 </style>
 <body>
 <table class="table">
@@ -31,30 +35,46 @@ include'hello.php';
     <tr>
         <th scope="row">1</th>
         <td>Tze Yee</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Team Leader</td>
+        <td>displayList.php
+            search_inventory_form.php
+            navigationdrawer(index.php)
+            dashboard.php
+            calendar.php
+            login.php
+            register.php</td>
+        <td>BootStrap
+            Youtube</td>
     </tr>
     <tr>
         <th scope="row">2</th>
         <td>Celine</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td></td>
+        <td>Vice Team Leader</td>
+        <td>query.html
+            queryedItems.php
+            scanningItems.html</td>
+        <td>https://www.w3schools.com/howto/howto_js_alert.asp
+            https://github.com/mebjas/html5-qrcode
+        </td>
     </tr>
     <tr>
         <th scope="row">3</th>
         <td>Joel</td>
-        <td>@twitter</td>
-        <td>@twitter</td>
+        <td>Checker</td>
+        <td>card.php
+            cardsave.php
+            confirmation.html</td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">3</th>
         <td>Joshua</td>
-        <td>@twitter</td>
-        <td>@twitter</td>
-        <td></td>
+        <td>Checker</td>
+        <td>invoice.php
+            receipts.php
+            sending of email
+            check for any mistakes in project</td>
+        <td>https://www.emailjs.com/docs/</td>
     </tr>
     </tbody>
 </table>

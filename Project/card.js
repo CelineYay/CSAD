@@ -43,6 +43,34 @@ function showRedeemPoints() {
 }
 
 
+let paypalButtonsRendered = false;
+
+function showPaypalButtons() {
+    // Only proceed if PayPal buttons haven't been rendered yet
+    if (!paypalButtonsRendered) {
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '299.99' // Adjust this value as needed
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    // Redirect or update UI as needed
+                });
+            }
+        }).render('#paypal-button-container');
+
+        // Mark PayPal buttons as rendered
+        paypalButtonsRendered = true;
+    }
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     var form = document.getElementById('card-form');
@@ -65,4 +93,5 @@ document.addEventListener("DOMContentLoaded", function () {
     tColorA.addEventListener("click", function () { dofun(); });
     tColorB.addEventListener("click", function () { dofunA(); });
     tColorC.addEventListener("click", function () { dofunB(); });
+    document.getElementById('paypal-payment-method-div').addEventListener("click", showPaypalButtons);
 });
